@@ -19,6 +19,7 @@ import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -40,13 +41,19 @@ public class User {
     @Email(message="Email must be valid.")
     private String email;
     
+    @NotBlank(message="Location can not be blank")
+    private String location;
+    
+    @NotBlank
+    private String state;
+    
     @Size(min=5, message="Password must be at least 5 characters.")
     private String password;
     
     @Transient
     private String passwordConfirmation;
     
-    @OneToMany(mappedBy="creator", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+    @OneToMany(mappedBy="host", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
     private List<Trip> trips;
     
     @ManyToMany(fetch=FetchType.LAZY)
@@ -125,6 +132,22 @@ public User() {
 	}
 	public void setTrips(List<Trip> trips) {
 		this.trips = trips;
+	}
+	
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
 	}
 	public Date getCreatedAt() {
 		return createdAt;

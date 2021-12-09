@@ -12,12 +12,10 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 <title>Trail Buddy</title>
 </head>
 <body>
-<div class="banner">
-<h1>Welcome to <span>Trip Buddy</span>!</h1>
-</div>
-<div class="image">
-<img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F28%2F2017%2F04%2F19-mount-rainier-national-park-washington-BESTHIKE0407.jpg&q=85"
->
-</div>
+	<div class="banner">
+		<h1>Welcome to <img class="" src="https://image.flaticon.com/icons/png/512/129/129050.png" 
+			alt="mountain image">  <span class="font-weight-bolder">Trail Buddy</span>!</h1>
+		<a class="btn btn-outline-dark" href="/logreg">Sing Up / Log In</a>
+	</div>
 </body>
 </html>

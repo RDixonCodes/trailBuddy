@@ -1,0 +1,121 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+.icon{
+	display:inline-block;
+}
+.banner img {
+	height:55px;
+	width:55px;
+	margin:5px -5px 25px 10px;
+	
+}
+.banner{
+	padding-top:20px;
+	background-image:url('https://res.cloudinary.com/whistler/image/upload/w_500,c_scale,dpr_3.0,q_auto/v1/s3/images/header/hiking-header.jpg');
+	height:800px;
+	background-size: cover;
+	
+}
+.banner h1{
+	display:inline-block;
+	font:italic;
+	margin-left:20px;
+}
+
+.banner a{
+	margin:0 0 20px 730px;
+}
+
+.header img {
+	height:55px;
+	width:55px;
+	margin:5px 0 40px 100px;
+	
+}
+
+.header img{
+	margin:20px -5px 55px 605px;
+	opacity:.75;
+}
+
+.header h1{
+	display:inline-block;
+	font:italic;
+	margin-left:5px;
+}
+
+.header h2{
+	font-size:medium;
+	font-style:italic;
+	margin-top:-45px;
+	margin-left:650px;
+}
+
+ .header {
+	background-image:url("https://hotelanthracite.com/wp-content/uploads/2018/06/hiking-with-walking-stick-1500x609.jpg");
+	opacity:.95;
+	padding-bottom:5px;
+ }
+
+.header a {
+	margin-bottom:20px;
+}
+
+.register {
+	width:370px;
+	margin:50px 0 0 400px;
+	display:inline-block;
+}
+
+.register input, select,option{
+	float:right;
+}
+
+.register button {
+	margin-left: 280px;
+}
+
+.location input{
+	width:133px;
+}
+.location select, option{
+	height:28px;
+}
+
+.login {
+	display: inline-block;
+	vertical-align: top;
+	margin:50px 0 0 50px;
+	width:300px;
+	
+}
+.login input {
+	float:right;
+}
+
+.login button {
+	margin-left: 230px;
+}
+
+.dashboard h3, a{
+	display:inline-block;
+}
+
+.card {
+	width:350px;
+	margin:40px 0 0 20px;
+	padding:0 10px 10px 10px;
+}
+.card input, select, option{
+	float:right;
+}
+.card h3{
+	margin-left:80px;
+	margin-bottom:-10px;
+}
+
+.card button {
+	margin-left: 220px;
+}
