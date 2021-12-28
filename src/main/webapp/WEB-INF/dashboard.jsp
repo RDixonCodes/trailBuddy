@@ -21,7 +21,7 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 	</div>
 	<div class="trips">
 	
-	<table class="table table-warning table-sm">
+	<table class="table table-dark table-sm">
 	
    		<thead>
        		<tr>
@@ -30,7 +30,7 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
             	<th>Location</th>
             	<th>State</th>
             	<th>Host</th>
-            	<th>Actions/Status</th>
+            	<th>Actions</th>
         	</tr>
         	
     	</thead>
@@ -41,7 +41,7 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 		<tr>    
     		<td><a href="/trips/${trip.id}"><c:out value="${trip.name}"/></a></td>
     		
-    		<td><c:out value="${trip.tripDate}"/></td>
+    		<td class=tripDate ><c:out value="${trip.tripDate}"/></td>
     		
     		<td><c:out value="${trip.city}"/></td>
     		
@@ -98,7 +98,7 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 	
 	<div class="trips">
 	
-	<table class="table table-success table-sm">
+	<table class="table table-secondary table-sm">
 	
    		<thead>
    		

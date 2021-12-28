@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.rickied.trailbuddy.models.Message;
 import com.rickied.trailbuddy.models.Trip;
 import com.rickied.trailbuddy.models.User;
 import com.rickied.trailbuddy.services.MessageService;
@@ -153,6 +154,83 @@ public class HomeController {
 		this.tService.cancelTrip(joinedUser, joinedTrip);
 		return "redirect:/trips";
 	}
+	
+	@GetMapping("/trips/delete/{id}")
+	public String deleteTrip(@PathVariable("id") Long id) {
+		this.tService.deleteTrip(id);
+		return "redirect:/trips";
+	}
+	
+	@GetMapping("/trips/edit/{id}")
+	public String editTrip(@ModelAttribute("updateTrip") Trip trip, @PathVariable("id") Long id, Model model, HttpSession session) {
+		Long userId = (Long) session.getAttribute("user_id");
+		Trip thisTrip = this.tService.getOneTrip(id);
+		if(userId == null) {
+			return "redirect:/logreg";
+		}
+		
+		if(!thisTrip.getHost().getId().equals(userId)) {
+			return "redirect:/trips";
+		}
+		
+		User user = this.uService.getOneUser(userId);
+		model.addAttribute("thisTirp", thisTrip);
+		model.addAttribute("user", user);
+		return "edit.jsp";
+	}
+	
+	@PostMapping("/events/edit/{id}")
+	public String editEvents(@Valid @ModelAttribute("updateTrip") Trip updatedTrip, BindingResult result, @PathVariable("id") Long id, Model model, HttpSession session) {
+		Long userId = (Long) session.getAttribute("user_id");
+		User user = this.uService.getOneUser(userId);
+		Trip thisTrip = this.tService.getOneTrip(id);
+		if(result.hasErrors()) {
+			model.addAttribute("updateTrip", this.tService.getOneTrip(id));
+			return "edit.jsp";
+		}
+		
+		model.addAttribute("user", user);
+		model.addAttribute("updateTrip", thisTrip);
+		updatedTrip.setHost(user);
+		this.tService.updateTrip(updatedTrip);
+		return "redirect:/trips";
+	}
+	
+	//Show trip
+	@GetMapping("/trips/{id}")
+	public String showTrip(@ModelAttribute("message") Message message, @PathVariable("id") Long id, HttpSession session, Model model) {
+	 Long userId = (Long) session.getAttribute("user_id");
+	 User user = this.uService.findById(userId);
+	 Trip trip = this.tService.getOneTrip(id);
+	 if(session.getAttribute("user_id") == null) {
+	 	return "redirect:/logreg";
+	 }
+
+	 if(trip == null) {
+		 return "redirect:/trips";
+	 }
+	 
+	 model.addAttribute("user", user);
+	 model.addAttribute("trip", trip);
+	 return "info.jsp";
+	 }
+	
+	@PostMapping("/trips/{id}/messages")
+	public String postMessages(@Valid @ModelAttribute("message") Message message, BindingResult result, @PathVariable("id") Long id, HttpSession session) {
+		System.out.println(message.getComment());
+		Long userId = (Long) session.getAttribute("user_id");
+		User thisUser = this.uService.getOneUser(userId);
+		Trip trip = this.tService.getOneTrip(id);
+		if(result.hasErrors()) {
+			return "redirect: info.jsp";
+		}
+		
+		message.setAuthor(thisUser);
+		message.setCommentTrip(trip);
+		this.mService.addMessage(message);
+		return "redirect:/trips/{id}";
+	}
+	
 	
 	
 }
