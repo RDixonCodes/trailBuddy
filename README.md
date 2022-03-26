@@ -1,4 +1,4 @@
-# trailBuddy
+# Trail Buddy
 
 Trail Buddy is an app made for hikers to share good times in the outdoors. Within this app users can login to find and join hiking trips that have been scheduled by other users. They also have the ability to create their own trip. 
 
