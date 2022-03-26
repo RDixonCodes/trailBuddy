@@ -8,4 +8,8 @@ Trail Buddy is an app made for hikers to share good times in the outdoors. Withi
 - Bootstrap
 - MySQL
 
-<img width="1442" alt="trailBuddyPic" src="https://user-images.githubusercontent.com/73620531/156233448-368578e6-f572-4042-b447-44d161507f7d.png">
+#DEMO:
+
+https://user-images.githubusercontent.com/73620531/160230103-ce65e7f6-922a-4e89-9f36-a9dfcfb55aa5.mov
+
+
