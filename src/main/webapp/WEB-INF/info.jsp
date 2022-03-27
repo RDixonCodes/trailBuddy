@@ -5,13 +5,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href=“/css/style.css">
+<link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
 integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <meta charset="UTF-8">
 <title>${event.name}</title>
 </head>
 <body>
+<div class="header">
+	<img src="https://cdn-icons-png.flaticon.com/512/565/565829.png" 
+			alt="mountain image">
+		<h1 class="font-weight-bolder">Trail Buddy</h1>
+		</div>
 	<div class="container my-5">
 		<a href="/trips" class="float-right">Dashboard</a>
 		<a href="/logout" class="float-right mx-5">Logout</a>
@@ -39,8 +44,9 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 					</tbody>
 				</table>
 			</div>
+			<div class="card bg-light mb-3">
 			<div class="col">
-				<h2>Message Wall</h2>
+				<h2 style= margin-left: "30px";>Message Wall</h2>
 				<table class="table table-striped table-bordered table-sm">
 					<tbody>
 					<c:forEach items="${trip.messages}" var = "message">
@@ -60,7 +66,7 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 					</p>
 					<button class="btn btn-outline-success">Submit</button>
 				</form:form>
-				
+				</div>
 			</div>
 		</div>
 	</div>

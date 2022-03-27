@@ -161,6 +161,7 @@ public class HomeController {
 		return "redirect:/trips";
 	}
 	
+	// edit trip
 	@GetMapping("/trips/edit/{id}")
 	public String editTrip(@ModelAttribute("updateTrip") Trip trip, @PathVariable("id") Long id, Model model, HttpSession session) {
 		Long userId = (Long) session.getAttribute("user_id");
@@ -174,13 +175,13 @@ public class HomeController {
 		}
 		
 		User user = this.uService.getOneUser(userId);
-		model.addAttribute("thisTirp", thisTrip);
+		model.addAttribute("thisTrip", thisTrip);
 		model.addAttribute("user", user);
 		return "edit.jsp";
 	}
 	
-	@PostMapping("/events/edit/{id}")
-	public String editEvents(@Valid @ModelAttribute("updateTrip") Trip updatedTrip, BindingResult result, @PathVariable("id") Long id, Model model, HttpSession session) {
+	@PostMapping("/trips/edit/{id}")
+	public String editTrips(@Valid @ModelAttribute("updateTrip") Trip updatedTrip, BindingResult result, @PathVariable("id") Long id, Model model, HttpSession session) {
 		Long userId = (Long) session.getAttribute("user_id");
 		User user = this.uService.getOneUser(userId);
 		Trip thisTrip = this.tService.getOneTrip(id);

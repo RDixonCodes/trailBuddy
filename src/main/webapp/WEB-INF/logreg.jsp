@@ -13,7 +13,7 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 </head>
 <body>
 	<div class="header">
-	<img src="https://image.flaticon.com/icons/png/512/129/129050.png" 
+	<img src="https://cdn-icons-png.flaticon.com/512/565/565829.png" 
 			alt="mountain image">
 		<h1 class="font-weight-bolder">Trail Buddy</h1>
 		<h2>(Please register or log in)</h2>

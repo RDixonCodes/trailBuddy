@@ -8,7 +8,7 @@
 .banner img {
 	height:55px;
 	width:55px;
-	margin:5px -5px 25px 10px;
+	margin:5px -5px 15px 10px;
 	
 }
 .banner{
@@ -36,7 +36,7 @@
 }
 
 .header img{
-	margin:20px -5px 55px 605px;
+	margin:20px -5px 45px 605px;
 	opacity:.75;
 }
 
@@ -121,4 +121,23 @@
 
 .card button {
 	margin-left: 220px;
+}
+
+.city input{
+	width:127px;
+	margin-left:48px;
+}
+.update select, option {
+	height:28px;
+}
+.update button {
+	margin-left: 240px;
+}
+
+.name input{
+	margin-left: 70px;
+}
+
+.date input{
+	margin-left: 77px;
 }

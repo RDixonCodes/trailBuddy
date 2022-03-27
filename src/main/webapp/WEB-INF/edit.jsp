@@ -19,7 +19,7 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 		<h3>Edit Trip</h3>
 		
 		<div class="update">
-		<form:form action="/events/edit/${thisTrip.id}" method="POST" modelAttribute="updateEvent">
+		<form:form action="/trips/edit/${thisTrip.id}" method="POST" modelAttribute="updateTrip">
 		
 			<div class="name">
 			<p>
@@ -32,8 +32,8 @@ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw
 	        
 	        <div class="date">
 	        <p>
-	            <form:label path="eventDate">Date:
-	            <form:errors path="eventDate"/>
+	            <form:label path="tripDate">Date:
+	            <form:errors path="tripDate"/>
 	            <form:input type="date" path="tripDate"/>
 	            </form:label>
 	        </p>
